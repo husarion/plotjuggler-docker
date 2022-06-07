@@ -1,0 +1,12 @@
+# Quick Start
+# $ xhost local:root
+# $ docker compose up
+
+services:
+  plotjuggler-ros:
+    build: .
+    volumes: 
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+    environment:
+      - DISPLAY
+    command: ros2 run plotjuggler plotjuggler
