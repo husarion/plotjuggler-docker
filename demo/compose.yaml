@@ -10,3 +10,15 @@ services:
     environment:
       - DISPLAY
     command: ros2 run plotjuggler plotjuggler
+
+  talker:
+    build:
+      context : .
+      dockerfile: Dockerfile.chatter
+    command: ros2 run demo_nodes_cpp talker
+
+  listener:
+    build:
+      context : .
+      dockerfile: Dockerfile.chatter
+    command: ros2 run demo_nodes_cpp listener
